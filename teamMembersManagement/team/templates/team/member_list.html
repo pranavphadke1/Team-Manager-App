@@ -1,0 +1,14 @@
+<h1>List of Team Members</h1>
+<a href="{% url 'member-create' %}"> Add Member </a>
+
+<table>
+  <tr>
+    <th>Team Members</th>
+  </tr>
+  {% for member in members %}
+  <tr>
+    <td>{{member}}</td>
+    <td><a href="{% url 'member-update' member.id %}"> Update </a></td>
+  </tr>
+  {% endfor %}
+</table>
