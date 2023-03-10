@@ -1,17 +1,31 @@
 <h1>List Page</h1>
 {% extends 'team/main.html' %} {% block content %}
 
-<a href="{% url 'member-create' %}"> Add Member </a>
+<div class="header-bar">
+  <div>
+    <h2>Team members</h2>
+    <div style="color: gray">
+      You have {{members.count}} team member{{members.count|pluralize:"s"}}.
+    </div>
+  </div>
 
-<table>
-  <tr>
-    <th>Team Members</th>
-  </tr>
+  <a class="add-member" href="{% url 'member-create' %}"> &#x2b; </a>
+</div>
+
+<div class="member-list-wrapper">
   {% for member in members %}
-  <tr>
-    <td>{{member}}</td>
-    <td><a href="{% url 'member-update' member.id %}"> Update </a></td>
-  </tr>
+  <a
+    class="member-wrapper"
+    href="{% url 'member-update' member.id %}"
+    class="task-title"
+  >
+    <div class="profile-container">&#x263B;</div>
+    <div class="contact-info">
+      <div>{{member}} {% if member.role == 'Admin' %} (admin) {%endif%}</div>
+      <div>{{member.phone}}</div>
+      <div>{{member.email}}</div>
+    </div>
+  </a>
   {% endfor %}
-</table>
+</div>
 {% endblock content %}

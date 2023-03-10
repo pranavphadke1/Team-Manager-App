@@ -1,9 +1,16 @@
 {% extends 'team/main.html' %} {% block content %}
 
-<a href="{% url 'members' %}">Go back</a>
 <form method="POST">
   {% csrf_token %}
-  <p>Are you sure you want to delete this team member? {{member}}</p>
+  <div class="header-bar">
+    <div>
+      <h3>Are you sure you want to delete this team member?</h3>
+      <div style="color: gray">{{member}}</div>
+    </div>
+
+    <a href="{% url 'members' %}">Go back</a>
+  </div>
+
   <input type="submit" value="Delete" />
 </form>
 

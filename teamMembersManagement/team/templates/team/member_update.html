@@ -1,11 +1,18 @@
 <h1>Edit Page</h1>
 {% extends 'team/main.html' %} {% block content %}
+<div class="header-bar">
+  <div>
+    <h2>Edit team member</h2>
+    <div style="color: gray">Edit contact info, location, and role</div>
+  </div>
 
-<h3>Member form</h3>
-<a href="{% url 'member-delete' member.id %}">Delete</a>
+  <a href="{% url 'members' %}">Go back</a>
+</div>
+
 <form method="POST" action="">
   {% csrf_token %} {{form.as_p}}
   <input type="submit" name="Update Member" />
+  <a href="{% url 'member-delete' member.id %}">Delete</a>
 </form>
 
 {% endblock content %}

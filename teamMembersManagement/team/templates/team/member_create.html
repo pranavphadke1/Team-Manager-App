@@ -1,7 +1,14 @@
 <h1>Add Page</h1>
 {% extends 'team/main.html' %} {% block content %}
 
-<h3>Member form</h3>
+<div class="header-bar">
+  <div>
+    <h2>Add a team member</h2>
+    <div style="color: gray">Set email, location, and role</div>
+  </div>
+
+  <a href="{% url 'members' %}">Go back</a>
+</div>
 
 <form method="POST" action="">
   {% csrf_token %} {{form.as_p}}
