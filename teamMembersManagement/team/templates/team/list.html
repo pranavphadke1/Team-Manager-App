@@ -1,5 +1,10 @@
 <h3>List of Team Members!</h3>
 
+<form method="POST" action="/">
+  {% csrf_token %} {{form}}
+  <input type="submit" name="Add New Member" />
+</form>
+
 {% for member in members %}
 <div>
   <p>{{member}}</p>
