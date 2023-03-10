@@ -1,6 +1,11 @@
+<h1>Edit Page</h1>
+{% extends 'team/main.html' %} {% block content %}
+
 <h3>Member form</h3>
 <a href="{% url 'member-delete' member.id %}">Delete</a>
 <form method="POST" action="">
   {% csrf_token %} {{form.as_p}}
   <input type="submit" name="Update Member" />
 </form>
+
+{% endblock content %}
