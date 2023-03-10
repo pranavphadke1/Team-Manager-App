@@ -8,8 +8,11 @@ class Member(models.Model):
     email = models.CharField(max_length=255)
     phone = models.CharField(max_length=50)
     
-    # Maybe change to role and enum later... 
-    is_admin = models.BooleanField(default=False)
-
+    class Role(models.TextChoices):
+        Regular = 'Regular'
+        Admin = 'Admin'
+    
+    role = models.CharField(max_length= 7, choices=Role.choices, default=Role.Regular)
+    
     def __str__(self):
         return self.first_name + ' ' + self.last_name
