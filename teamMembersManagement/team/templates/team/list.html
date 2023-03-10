@@ -7,6 +7,7 @@
 
 {% for member in members %}
 <div>
+  <a href="{% url 'update_member' member.id %}"> Update </a>
   <p>{{member}}</p>
 </div>
 
