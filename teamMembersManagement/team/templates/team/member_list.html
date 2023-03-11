@@ -22,8 +22,8 @@
     <div class="profile-container">&#x263B;</div>
     <div class="contact-info">
       <div>{{member}} {% if member.role == 'Admin' %} (admin) {%endif%}</div>
-      <div>{{member.phone}}</div>
-      <div>{{member.email}}</div>
+      <div style="color: gray">{{member.phone}}</div>
+      <div style="color: gray">{{member.email}}</div>
     </div>
   </a>
   {% endfor %}
