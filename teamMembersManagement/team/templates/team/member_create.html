@@ -49,15 +49,23 @@
     <h3>Role</h3>
     <div class="role-container">
       <label class="role-item" for="Regular"
-        >Regular
+        >Regular - Can't delete members
         <input name="role" id="Regular" type="radio" value="Regular" checked />
       </label>
 
       <label class="role-item" for="Admin"
-        >Admin <input name="role" id="Admin" type="radio" value="Admin"
+        >Admin - Can delete members<input
+          name="role"
+          id="Admin"
+          type="radio"
+          value="Admin"
       /></label>
     </div>
+    <div class="add-page-button-wrapper">
+      <button class="button save-button" type="submit" name="Create Member">
+        Save
+      </button>
+    </div>
   </div>
-  <input type="submit" name="Create Member" />
 </form>
 {% endblock content %}

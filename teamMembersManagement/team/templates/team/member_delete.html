@@ -7,11 +7,21 @@
       <h3>Are you sure you want to delete this team member?</h3>
       <div style="color: gray">{{member}}</div>
     </div>
-
-    <a href="{% url 'members' %}">Go back</a>
   </div>
 
-  <input type="submit" value="Delete" />
+  <div class="member-info-container">
+    <div class="edit-page-button-wrapper">
+      <button
+        class="button delete-button"
+        href="{% url 'member-delete' member.id %}"
+        type="submit"
+        value="Delete"
+      >
+        Delete
+      </button>
+      <a class="button save-button" href="{% url 'members' %}">Cancel</a>
+    </div>
+  </div>
 </form>
 
 {% endblock content %}
