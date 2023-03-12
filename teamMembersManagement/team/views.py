@@ -13,6 +13,7 @@ class MemberList(ListView):
 
 class MemberCreate(CreateView):
     model = Member
+    context_object_name = 'member'
     fields = '__all__'
     success_url = reverse_lazy('members')
     template_name = 'team/member_create.html'
@@ -20,6 +21,7 @@ class MemberCreate(CreateView):
 
 class MemberUpdate(UpdateView):
     model = Member
+    context_object_name = 'member'
     fields = '__all__'
     success_url = reverse_lazy('members')
     template_name = 'team/member_update.html'

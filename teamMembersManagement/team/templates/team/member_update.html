@@ -10,8 +10,66 @@
 </div>
 
 <form method="POST" action="">
-  {% csrf_token %} {{form.as_p}}
-  <input type="submit" name="Update Member" />
+  {% csrf_token %}
+  <div class="member-info-container">
+    <h3>Info</h3>
+    <input
+      class="contact-input"
+      placeholder="First name"
+      type="text"
+      name="first_name"
+      value="{{ member.first_name }}"
+    />
+    <br />
+    <input
+      class="contact-input"
+      placeholder="Last name"
+      type="text"
+      name="last_name"
+      value="{{ member.last_name }}"
+    />
+    <br />
+    <input
+      class="contact-input"
+      placeholder="Email"
+      type="text"
+      name="email"
+      value="{{ member.email }}"
+    />
+    <br />
+    <input
+      class="contact-input"
+      placeholder="Phone"
+      type="text"
+      name="phone"
+      value="{{ member.phone }}"
+    />
+    <br />
+    <h3>Role</h3>
+
+    <div class="role-container">
+      {% if member.role == 'Regular' %}
+      <label class="role-item" for="Regular"
+        >Regular
+        <input name="role" id="Regular" type="radio" value="Regular" checked />
+      </label>
+      {% else %}
+      <label class="role-item" for="Regular"
+        >Regular
+        <input name="role" id="Regular" type="radio" value="Regular" />
+      </label>
+      {%endif%} {% if member.role == 'Admin' %}
+      <label class="role-item" for="Admin"
+        >Admin <input name="role" id="Admin" type="radio" value="Admin" checked
+      /></label>
+      {% else %}
+      <label class="role-item" for="Admin"
+        >Admin <input name="role" id="Admin" type="radio" value="Admin"
+      /></label>
+      {%endif%}
+    </div>
+  </div>
+  <input type="submit" name="Create Member" />
   <a href="{% url 'member-delete' member.id %}">Delete</a>
 </form>
 
