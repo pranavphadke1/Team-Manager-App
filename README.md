@@ -4,6 +4,7 @@ This is a team-member-management application implemented with Django.
 
 # Run server
 
+Make sure you have django installed.
 To run this application, first cd into the teamMembersManagement directory:
 Open the terminal and type:
 
